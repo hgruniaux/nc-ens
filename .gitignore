@@ -1,1 +1,4 @@
 build
+.idea
+nc-ens.kdev4
+cmake-build-debug/
