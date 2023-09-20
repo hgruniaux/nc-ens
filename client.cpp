@@ -2,10 +2,18 @@
 
 #include "common.hpp"
 
-void client() {
-    int file_desc = socket(AF_INET, SOCK_STREAM, TCP_PROTOCOL);
-    if (file_desc) {}
+// Returns true on success.
+bool client() {
+    int file_desc = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (file_desc != -1) {
+        return false;
+    }
 
     sockaddr addr;
-    connect(file_desc, &addr, sizeof addr);
+    // TODO fill addr
+    if (connect(file_desc, &addr, sizeof addr) == -1) {
+        return false;
+    }
+
+    return true;
 }
