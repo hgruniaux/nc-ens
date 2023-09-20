@@ -2,11 +2,11 @@
 #define NC_COMMON_H
 
 #include <optional>
-#include <string>
+#include <string_view>
 
 std::optional<int> create_socket();
 
-void log(const std::string &data);
+void log(std::string_view message);
 
 #endif //NC_COMMON_H
 

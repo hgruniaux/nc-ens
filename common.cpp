@@ -13,6 +13,6 @@ std::optional<int> create_socket() {
     }
 }
 
-void log(const std::string &data) {
-    std::cerr << "LOG : " << data << std::endl;
+void log(std::string_view message) {
+    std::cerr << "LOG : " << message << std::endl;
 }
