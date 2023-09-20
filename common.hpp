@@ -1,3 +1,13 @@
-#pragma once
+#ifndef NC_COMMON_H
+#define NC_COMMON_H
 
-constexpr int IPPROTO_TCP = 6;
+#include <optional>
+#include <string>
+
+std::optional<int> create_socket();
+
+void log(const std::string &data);
+
+#endif //NC_COMMON_H
+
+
