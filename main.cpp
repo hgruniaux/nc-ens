@@ -1,10 +1,11 @@
 #include <string_view>
 #include <string>
+#include <iostream>
 #include "common.hpp"
 
 int main(int argc, char *argv[]) {
     unsigned short port = 8888;
-    std::string_view host;
+    std::string_view host = "localhost";
     bool is_server = false;
 
     for (int i = 0; i < argc; ++i) {
@@ -21,14 +22,15 @@ int main(int argc, char *argv[]) {
     }
 
     if (is_server) {
-        printf("Creating server at localhost:%d\n", port);
+        std::cout << "Creating server at localhost:" << port << std::endl;
         if (!server(port)) {
-            fprintf(stderr, "Failed to create server...");
+            std::cerr << "Failed to create server..." << std::endl;
         }
     } else { // is_client
-        printf("Connecting to server at %s:%d\n", host.data(), port);
+        std::cout << "Connecting to server at " << host << ":" << port << std::endl;
+
         if (!client(host.data(), port)) {
-            fprintf(stderr, "Failed to create client...");
+            std::cerr << "Failed to create client..." << std::endl;
         }
     }
 

@@ -33,10 +33,12 @@ bool server(unsigned short port) {
     const int enable = 1;
     if (setsockopt(fd.value(), SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(int)) < 0) {
         log("setsockopt failed (SO_REUSEADDR)");
+        return false;
     }
 
     if (setsockopt(fd.value(), SOL_SOCKET, SO_REUSEPORT, &enable, sizeof(int)) < 0) {
         log("setsockopt failed (SO_REUSEPORT)");
+        return false;
     }
 
     auto p = m_bind(fd.value(), port);

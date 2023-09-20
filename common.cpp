@@ -4,7 +4,8 @@
 #include <iostream>
 
 std::optional<int> create_socket() {
-    if (int fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP) != -1) {
+    int fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (fd == -1) {
         log("Error creating socket");
         return {};
     } else {
