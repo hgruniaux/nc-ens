@@ -1,6 +1,6 @@
 #include <sys/socket.h>
-
-#include "common.hpp"
+#include <netinet/tcp.h>
+#include <poll.h>
 
 // Returns true on success.
 bool client() {
@@ -14,6 +14,8 @@ bool client() {
     if (connect(file_desc, &addr, sizeof addr) == -1) {
         return false;
     }
+
+    poll
 
     return true;
 }
