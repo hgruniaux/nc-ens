@@ -62,5 +62,6 @@ bool client ( const char *addr, int port )
         }
     }
 
+    close(file_desc.value());
     return true;
 }
