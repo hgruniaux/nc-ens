@@ -1,8 +1,9 @@
 #include <string_view>
 #include <string>
+#include "common.hpp"
 
-int main(int argc, char* argv[]) {
-    int port = 8888;
+int main(int argc, char *argv[]) {
+    unsigned short port = 8888;
     std::string_view host;
     bool is_server = false;
 
