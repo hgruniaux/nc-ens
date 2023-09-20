@@ -1,3 +1,3 @@
 #pragma once
 
-constexpr int TCP_PROTOCOL = 6;
+constexpr int IPPROTO_TCP = 6;
