@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 
     if (is_server) {
         printf("Creating server at localhost:%d\n", port);
-        if (!server()) {
+        if (!server(port)) {
             fprintf(stderr, "Failed to create server...");
         }
     } else { // is_client
